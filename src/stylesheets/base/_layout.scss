@@ -1,0 +1,283 @@
+html {
+  font-size: $font-size;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  visibility: visible;
+  background-color: $blue-background;
+}
+body {
+  font-family: FuturaItalic, sans-serif;
+  overflow: hidden;
+  background-color: $blue-background;
+  height: 100%;
+  // +80 to enable ios users to scroll up and down to view/hide the menu bar
+  // disable for now
+  // padding-bottom: 80px;
+  color: #fff;
+}
+a,
+a:visited,
+a:active,
+#tilt,
+a:focus {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  .before {
+    z-index: 0;
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 0.5em;
+    bottom: -0.1em;
+    left: 0;
+    transition: 0.4s;
+  }
+  &:hover {
+    .before {
+      height: 140%;
+    }
+  }
+  .main {
+    position: relative;
+    z-index: 1;
+  }
+}
+.blue.before {
+  background-color: lighten($blue-background, 25%);
+}
+.green.before {
+  background-color: lighten($green-background, 15%);
+}
+.pink.before {
+  background-color: lighten($pink-background, 5%);
+}
+.pink {
+  background-color: $pink-background;
+}
+.blue {
+  background-color: $blue-background;
+}
+.green {
+  background-color: $green-background;
+}
+h2 {
+  text-transform: uppercase;
+  font-size: $font-size-large;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn {
+  text-transform: uppercase;
+  font-size: 15px;
+  border: 2px solid #fff;
+  letter-spacing: 0.08em;
+  color: #fff;
+  margin-top: 15px;
+  padding: 20px 40px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+@media screen and (max-width: $breakpoint-mobile-max) {
+  button.btn {
+    padding: 16px 25px;
+    padding-top: 17px;
+  }
+}
+button:focus, textarea:focus, input:focus{
+  outline: none;
+}
+button.inactive {
+  color: $medium-grey;
+  border-color: $medium-grey;
+}
+.game-over-screen-wrapper,
+.intro-wrapper {
+  @extend .screen;
+  z-index: 20;
+}
+.game-over-screen-wrapper {
+  z-index: 20;
+}
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+button.btn.about-button {
+  z-index: 90;
+  position: absolute;
+  border: 0;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px;
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+}
+.grey-text {
+  margin-top: -15px;
+  color: $medium-grey;
+}
+.badge {
+  left: 13px;
+  bottom: 13px;
+  position: fixed !important;
+  width: 200px;
+  z-index: 100;
+  img {
+    opacity: 0.35;
+    width: 100%;
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    left: 8px;
+    bottom: 8px;
+  }
+}
+.enter-vr {
+  padding: 20px;
+  border: 0;
+  right: 40px;
+  bottom: -4px;
+  position: fixed;
+  z-index: 100;
+  display: none;
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    bottom: -11px;
+    right: 34px;
+  }
+  img {
+    width: 25px;
+    height: auto;
+  }
+}
+.mute {
+  padding: 20px;
+  border: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  img {
+    width: 25px;
+    height: auto;
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    padding-right: 15px;
+    padding-top: 13px;
+    img {
+      width: 20px;
+    }
+  }
+}
+.exit-arrow,
+.back-arrow {
+  padding: 18px;
+  border: 0;
+  left: 0;
+  top: 0;
+  position: absolute;
+  img {
+    width: 25px;
+    height: auto;
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    padding-left: 15px;
+    padding-top: 13px;
+    img {
+      width: 20px;
+    }
+  }
+}
+.transition-color-screen {
+  z-index: 3;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: -100%;
+}
+.webvr-button {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-color: transparent;
+  border: 0;
+  user-select: none;
+  cursor: pointer;
+  padding: 20px;
+  z-index: 1;
+  display: none;
+  box-sizing: content-box;
+}
+.reset-pose {
+  position: fixed;
+  bottom: 5px;
+  right: 93px;
+  width: 20px;
+  height: 30px;
+  padding: 0px;
+  user-select: none;
+  cursor: pointer;
+  z-index: 4;
+  border: 0;
+  display: none;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.fullscreen-button {
+  bottom: 2px;
+  right: 0;
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    width: 16px;
+    bottom: -6px;
+    right: 0;
+  }
+}
+.ui {
+  opacity: 0;
+}
+.wild-logo {
+  position: absolute !important;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 40px;
+  padding: 15px 20px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    padding: 10px 15px;
+  }
+}
+.choose-mode-screen .wild-logo {
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    display: none;
+  }
+}

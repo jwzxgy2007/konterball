@@ -1,0 +1,99 @@
+.open-room-screen,
+.join-room-screen {
+  left: -100%;
+  @extend .screen;
+  .inner {
+    @extend .absolute-center;
+    width: 100%;
+  }
+  width: 100%;
+  font-size: 16px;
+  input {
+    display: block;
+    text-align: center;
+    margin: auto;
+    background-color: transparent;
+    font-family: AntiqueOlive;
+    border: 0;
+    color: #fff;
+    padding: 0;
+    font-size: 140px;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+  #room-code {
+    text-transform: uppercase;
+  }
+  .opponent-joined {
+    font-family: FuturaItalic;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  .grey-text {
+    margin-top: -10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    input {
+      font-size: 80px;
+    }
+    .input-wrapper {
+      input {
+        font-size: 50px;
+        margin-bottom: -10px;
+      }
+      .placeholder.placeholder {
+        font-size: 60px;
+        bottom: 10px;
+      }
+    }
+    .opponent-joined {
+      margin-top: 10px;
+    }
+    .grey-text {
+      margin-bottom: -10px;
+    }
+  }
+}
+.open-room-screen {
+  background-color: $blue-background;
+  .opponent-icon {
+    circle, path {
+      fill: $blue-inactive;
+    }
+  }
+  .grey-text {
+    color: $blue-inactive;
+  }
+}
+.join-room-screen {
+  background-color: $green-background;
+  .opponent-icon {
+    circle, path {
+      fill: $green-inactive;
+    }
+  }
+  .grey-text {
+    color: $green-inactive;
+  }
+  .input-wrapper {
+    position: relative;
+    .placeholder {
+      pointer-events: none;
+      font-family: AntiqueOlive;
+      letter-spacing: 0.23em;
+      text-align: center;
+      display: block;
+      color: #fff;
+      font-size: 160px;
+      position: absolute;
+      height: 100%;
+      bottom: 50px;
+      left: 30px;
+      right: 0;
+      margin: auto;
+    }
+  }
+}

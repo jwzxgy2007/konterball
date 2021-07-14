@@ -1,0 +1,52 @@
+.game-over-screen-wrapper {
+  display: none;
+  .game-over-screen {
+    width: 100%;
+  }
+  #result {
+    font-family: AntiqueOlive;
+    font-size: $font-size-olive;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .share-info-text {
+    text-transform: uppercase;
+    color: $medium-grey;
+  }
+  #play-again, #exit {
+    width: 160px;
+    @media screen and (min-width: $breakpoint-mobile-min) {
+      width: 200px;
+      margin-top: 50px;
+    }
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #score {
+    margin-bottom: 0;
+  }
+  .share-wrapper {
+    margin-top: 50px;
+    button {
+      border: 0;
+      padding: 0;
+      img {
+        width: 50px;
+      }
+      &:hover {
+        img {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    .share-wrapper {
+      margin-top: 15px;
+    }
+  }
+}
+.game-over-screen {
+  @extend .absolute-center;
+}

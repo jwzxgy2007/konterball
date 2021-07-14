@@ -1,0 +1,114 @@
+$border-width: 2px;
+$margin: calc(100px - 4vw);
+$margin: 4vh;
+.choose-mode-screen {
+  left: -100%;
+  @extend .screen;
+  h3 {
+    font-family: AntiqueOlive;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 1em;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #fff;
+    position: absolute;
+    top: 12vh;
+    width: 100%;
+    letter-spacing: 2px;
+    font-weight: normal;
+  }
+  .one-player-col, .two-player-col {
+    width: 50%;
+    position: absolute;
+    text-align: center;
+  }
+  .buttons {
+    position: absolute;
+    width: 100%;
+    bottom: 12vh;
+    button.btn {
+      padding: 20px 40px;
+      @media screen and (max-width: $breakpoint-mobile-max) {
+        padding: 18px 20px;
+        padding-top: 20px;
+      }
+    }
+  }
+  #join-room {
+    margin-left: 15px;
+    margin-right: 0;
+  }
+  #open-room {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .btn {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .one-player-col {
+    background-color: $pink-background;
+    left: 0;
+    top: 0;
+    height: 100%;
+    .inner {
+      bottom: $margin;
+    }
+  }
+  .two-player-col {
+    background-color: $blue-background;
+    right: 0;
+    top: 0;
+    height: 100%;
+    .inner {
+      top: $margin * 1.5;
+    }
+  }
+  // optically center the table animations
+  #singleplayer-animation {
+    width: 65%;
+    margin: auto;
+    @extend .absolute-center;
+    transform: translate(-55%, -55%);
+  }
+  #multiplayer-animation {
+    width: 83%;
+    margin: auto;
+    @extend .absolute-center;
+    transform: translate(-50%, -55%);
+  }
+  @media screen and (max-width: $breakpoint-mobile-max) {
+    #singleplayer-animation {
+      width: 60%;
+      transform: translate(-55%, -65%);
+    }
+    #multiplayer-animation {
+      width: 75%;
+      transform: translate(-50%, -65%);
+    }
+    .buttons {
+      bottom: 10vh;
+    }
+    .btn {
+      padding: 20px;
+      padding-top: 15px;
+      padding-bottom: 13px;
+    }
+    h3 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .btn {
+      padding: 10px;
+      padding-top: 15px;
+      padding-bottom: 13px;
+      font-size: 10px;
+    }
+    #join-room {
+      margin-left: 5px;
+    }
+  }
+}
